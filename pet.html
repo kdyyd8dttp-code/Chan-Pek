@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chan Pek | Perfil</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4efe7;margin:0;color:#2d2a26}
+.wrap{max-width:560px;margin:30px auto;padding:20px}.card{background:white;padding:24px;border-radius:18px;box-shadow:0 5px 20px #0001}
+.photo{width:150px;height:150px;border-radius:50%;object-fit:cover;background:#ddd;display:block;margin:auto}
+.center{text-align:center}.tag{padding:10px;border-radius:10px;background:#f1eadf;margin:10px 0}
+a.button{display:block;text-align:center;padding:13px;border-radius:10px;background:#2d2a26;color:white;text-decoration:none;font-weight:bold}
+small{color:#777}
+</style></head>
+<body><div class="wrap"><div class="card">
+<div class="center"><h1>🐾 CHAN PEK</h1><small>Amor que se lleva en cada patita</small></div>
+<img id="photo" class="photo" src="https://placehold.co/300x300?text=Kira" alt="Foto de mascota">
+<div class="center"><h2 id="pet">Kira</h2><p id="breed">Chihuahua</p></div>
+<div class="tag"><b>Información importante</b><br><span id="important">No le gusta el pollo.</span></div>
+<div class="tag"><b>Dato adicional</b><br><span id="extra">Es tímida con personas desconocidas.</span></div>
+<div class="tag"><b>Zona</b><br>Kantunilkín, Quintana Roo</div>
+<a class="button" id="contact" href="tel:+520000000000">Contactar al dueño</a>
+<p><small>La dirección exacta del dueño no se muestra públicamente.</small></p>
+</div></div>
+<script>
+const d=JSON.parse(localStorage.getItem('chanpek_demo')||'null');
+if(d){
+ document.querySelector('#pet').textContent=d.pet||'Kira';
+ document.querySelector('#breed').textContent=d.breed||'';
+ document.querySelector('#important').textContent=d.important||'Sin información';
+ document.querySelector('#extra').textContent=d.extra||'Sin información';
+ if(d.photo) document.querySelector('#photo').src=d.photo;
+ if(d.phone) document.querySelector('#contact').href='tel:'+d.phone;
+}
+</script>
+</body></html>
